@@ -20,7 +20,8 @@ body{
 background: linear-gradient(180deg,#ffd6f6,#ffeefe,#f7d8ff);
 overflow:hidden;
 height:100vh;
-color:#fff;
+/* تم تغيير لون النص العام ليصبح أغمق للوضوح */
+color:#5d3a58;
 }
 
 /* خلفية */
@@ -60,7 +61,7 @@ opacity:0;
 display:none;
 height:100vh;
 padding:30px 20px;
-justify-content:center;8
+justify-content:center;
 align-items:center;
 flex-direction:column;
 text-align:center;
@@ -86,7 +87,7 @@ transform:translateY(0);
 .title{
 font-size:34px;
 margin-bottom:10px;
-text-shadow:0 0 15px rgba(255,255,255,.6);
+color:#5d3a58;
 }
 
 /* النص */
@@ -94,18 +95,19 @@ text-shadow:0 0 15px rgba(255,255,255,.6);
 font-size:16px;
 line-height:1.9;
 max-width:330px;
+color:#5d3a58;
 }
 
 /* الكارد */
 .card{
-background:rgba(255,255,255,.15);
+background:rgba(255,255,255,.5);
 backdrop-filter:blur(10px);
 padding:25px;
 border-radius:30px;
 width:100%;
 max-width:360px;
 box-shadow:0 0 25px rgba(255,255,255,.3);
-border:2px solid rgba(255,255,255,.2);
+border:2px solid rgba(255,255,255,.5);
 }
 
 /* الأزرار */
@@ -134,8 +136,9 @@ margin-top:12px;
 padding:14px;
 border-radius:20px;
 border:none;
-background:rgba(255,255,255,.18);
-color:white;
+background:rgba(255,255,255,.6);
+color:#5d3a58;
+font-weight:bold;
 font-size:15px;
 cursor:pointer;
 transition:.25s;
@@ -143,7 +146,7 @@ transition:.25s;
 
 .option:hover{
 transform:scale(1.04);
-background:rgba(255,255,255,.3);
+background:rgba(255,255,255,.9);
 }
 
 /* الشخصيات */
@@ -164,180 +167,84 @@ transform:translateY(-10px);
 
 /* رسالة النهاية */
 .final-box{
-background:rgba(255,255,255,.18);
+background:rgba(255,255,255,.6);
 padding:28px;
 border-radius:35px;
 width:100%;
 max-width:370px;
 backdrop-filter:blur(12px);
 box-shadow:0 0 30px rgba(255,255,255,.4);
-border:2px solid rgba(255,255,255,.25);
+border:2px solid rgba(255,255,255,.5);
 }
 
 #message{
 line-height:2;
 font-size:16px;
 white-space:pre-line;
-}
-
-/* glow */
-.glow{
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px #fff;
-}
-to{
-text-shadow:0 0 25px #ff7edb;
-}
+color:#5d3a58;
+font-weight: 500;
 }
 
 </style>
 </head>
 <body>
 
-<!-- الخلفية -->
 <div class="bg" id="bg"></div>
 
-<!-- البداية -->
 <section class="screen active" id="start">
-
 <div class="card">
-
 <div class="character">🎀🧸🌸</div>
-
-<h1 class="title glow">
-مفاجأة عيد صغيرة
-</h1>
-
-<p class="desc">
-قبل ما يخلص العيد...
-في شيء بسيط جدًا
-بس طالع من القلب 🤍
-</p>
-
-<button class="btn" onclick="nextScreen('q1')">
-🎁 افتحي المفاجأة
-</button>
-
+<h1 class="title">مفاجأة عيد صغيرة</h1>
+<p class="desc">قبل ما يخلص العيد...<br>في شيء بسيط جدًا<br>بس طالع من القلب 🤍</p>
+<button class="btn" onclick="nextScreen('q1')">🎁 افتحي المفاجأة</button>
 </div>
-
 </section>
 
-<!-- سؤال 1 -->
 <section class="screen" id="q1">
-
 <div class="card">
-
 <div class="character">🎀 Hello Kitty 🎀</div>
-
-<h2 class="title">
-لو العيد كان شعور؟
-</h2>
-
-<button class="option" onclick="nextScreen('q2')">
-🌸 راحة وهدوء
-</button>
-
-<button class="option" onclick="nextScreen('q2')">
-✨ ضحك وفرحة
-</button>
-
-<button class="option" onclick="nextScreen('q2')">
-🧸 ناس قريبة
-</button>
-
+<h2 class="title">لو العيد كان شعور؟</h2>
+<button class="option" onclick="nextScreen('q2')">🌸 راحة وهدوء</button>
+<button class="option" onclick="nextScreen('q2')">✨ ضحك وفرحة</button>
+<button class="option" onclick="nextScreen('q2')">🧸 ناس قريبة</button>
 </div>
-
 </section>
 
-<!-- سؤال 2 -->
 <section class="screen" id="q2">
-
 <div class="card">
-
 <div class="character">🩷 Kuromi 🩷</div>
-
-<h2 class="title">
-وش أكثر شي يسعدك؟
-</h2>
-
-<button class="option" onclick="nextScreen('q3')">
-💖 الاهتمام
-</button>
-
-<button class="option" onclick="nextScreen('q3')">
-🌷 الكلام الحلو
-</button>
-
-<button class="option" onclick="nextScreen('q3')">
-🦋 شخص يهتم فعلًا
-</button>
-
+<h2 class="title">وش أكثر شي يسعدك؟</h2>
+<button class="option" onclick="nextScreen('q3')">💖 الاهتمام</button>
+<button class="option" onclick="nextScreen('q3')">🌷 الكلام الحلو</button>
+<button class="option" onclick="nextScreen('q3')">🦋 شخص يهتم فعلًا</button>
 </div>
-
 </section>
 
-<!-- سؤال 3 -->
 <section class="screen" id="q3">
-
 <div class="card">
-
 <div class="character">🐰 My Melody 🐰</div>
-
-<h2 class="title">
-جاهزة للمفاجأة الأخيرة؟
-</h2>
-
-<button class="btn" onclick="showFinal()">
-🎀 أكيد
-</button>
-
+<h2 class="title">جاهزة للمفاجأة الأخيرة؟</h2>
+<button class="btn" onclick="showFinal()">🎀 أكيد</button>
 </div>
-
 </section>
 
-<!-- النهاية -->
 <section class="screen" id="final">
-
 <div class="final-box">
-
-<div class="character">
-🌸💖🧸✨
-</div>
-
-<h1 class="title glow">
-عيدك أحلى 🎀
-</h1>
-
+<div class="character">🌸💖🧸✨</div>
+<h1 class="title">عيدك أحلى 🎀</h1>
 <p id="message"></p>
-
 </div>
-
 </section>
 
 <script>
-
-/* انتقال */
 function nextScreen(id){
-
-document.querySelectorAll('.screen')
-.forEach(s=>s.classList.remove('active'));
-
-document.getElementById(id)
-.classList.add('active');
-
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 
-/* النهاية */
 function showFinal(){
-
 nextScreen('final');
-
 startEffects();
-
 let text=`كل عام وأنتِ ألطف شخص ممكن يدخل حياة أحد 🤍
 
 وجودك لحاله يغيّر الجو،
@@ -353,71 +260,34 @@ let text=`كل عام وأنتِ ألطف شخص ممكن يدخل حياة أح
 بس حبيت أقول لك…
 
 وجودك يفرق فعلًا 🎀`;
-
 typeText(text);
-
 }
 
-/* كتابة */
 let i=0;
-
 function typeText(text){
-
 if(i < text.length){
-
-document.getElementById("message")
-.innerHTML += text.charAt(i);
-
+document.getElementById("message").innerHTML += text.charAt(i);
 i++;
-
-setTimeout(()=>{
-typeText(text)
-},35);
-
+setTimeout(()=>{typeText(text)},35);
+}
 }
 
-}
-
-/* مؤثرات */
 function startEffects(){
-
 const bg=document.getElementById('bg');
-
-const items=[
-'💖','🌸','🦋','✨','🎀','🌷','🧸','🐰'
-];
-
+const items=['💖','🌸','🦋','✨','🎀','🌷','🧸','🐰'];
 setInterval(()=>{
-
 let el=document.createElement('div');
-
 el.className='float';
-
-el.innerHTML=
-items[Math.floor(Math.random()*items.length)];
-
+el.innerHTML=items[Math.floor(Math.random()*items.length)];
 el.style.left=Math.random()*100+'vw';
-
-el.style.fontSize=
-(18 + Math.random()*28)+'px';
-
-el.style.animationDuration=
-(4 + Math.random()*4)+'s';
-
+el.style.fontSize=(18 + Math.random()*28)+'px';
+el.style.animationDuration=(4 + Math.random()*4)+'s';
 bg.appendChild(el);
-
-setTimeout(()=>{
-el.remove();
-},8000);
-
+setTimeout(()=>{el.remove()},8000);
 },180);
-
 }
-
-/* مؤثرات البداية */
 startEffects();
-
 </script>
 
 </body>
-  </html>
+</html>
