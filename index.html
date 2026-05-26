@@ -20,8 +20,8 @@ body{
 background: linear-gradient(180deg,#ffd6f6,#ffeefe,#f7d8ff);
 overflow:hidden;
 height:100vh;
-/* تم تغيير لون النص العام ليصبح أغمق للوضوح */
-color:#5d3a58;
+/* تم ضبط لون النص العام ليكون غامقاً */
+color:#332930;
 }
 
 /* خلفية */
@@ -87,7 +87,7 @@ transform:translateY(0);
 .title{
 font-size:34px;
 margin-bottom:10px;
-color:#5d3a58;
+color:#332930;
 }
 
 /* النص */
@@ -95,33 +95,33 @@ color:#5d3a58;
 font-size:16px;
 line-height:1.9;
 max-width:330px;
-color:#5d3a58;
+color:#332930;
 }
 
 /* الكارد */
 .card{
-background:rgba(255,255,255,.5);
+background:rgba(255,255,255,.6);
 backdrop-filter:blur(10px);
 padding:25px;
 border-radius:30px;
 width:100%;
 max-width:360px;
-box-shadow:0 0 25px rgba(255,255,255,.3);
+box-shadow:0 0 25px rgba(0,0,0,.05);
 border:2px solid rgba(255,255,255,.5);
 }
 
-/* الأزرار */
+/* الأزرار الأساسية */
 .btn{
 margin-top:18px;
 border:none;
 padding:14px 22px;
 border-radius:999px;
 background:#ff73c5;
-color:white;
+color:white; /* الزر يبقى أبيض لتباين أفضل */
 font-size:16px;
 cursor:pointer;
 transition:.3s;
-box-shadow:0 0 15px rgba(255,105,180,.5);
+box-shadow:0 0 15px rgba(255,105,180,.3);
 }
 
 .btn:hover{
@@ -129,15 +129,15 @@ transform:scale(1.08);
 background:#ff4db8;
 }
 
-/* الخيارات */
+/* الخيارات (تم تغيير لون الخط هنا إلى أسود) */
 .option{
 width:100%;
 margin-top:12px;
 padding:14px;
 border-radius:20px;
 border:none;
-background:rgba(255,255,255,.6);
-color:#5d3a58;
+background:rgba(255,255,255,.7);
+color:#332930; /* تغيير الخط من الأبيض إلى الأسود */
 font-weight:bold;
 font-size:15px;
 cursor:pointer;
@@ -167,13 +167,13 @@ transform:translateY(-10px);
 
 /* رسالة النهاية */
 .final-box{
-background:rgba(255,255,255,.6);
+background:rgba(255,255,255,.7);
 padding:28px;
 border-radius:35px;
 width:100%;
 max-width:370px;
 backdrop-filter:blur(12px);
-box-shadow:0 0 30px rgba(255,255,255,.4);
+box-shadow:0 0 30px rgba(0,0,0,.05);
 border:2px solid rgba(255,255,255,.5);
 }
 
@@ -181,8 +181,8 @@ border:2px solid rgba(255,255,255,.5);
 line-height:2;
 font-size:16px;
 white-space:pre-line;
-color:#5d3a58;
-font-weight: 500;
+color:#332930; /* لون الخط أسود */
+font-weight: 600;
 }
 
 </style>
