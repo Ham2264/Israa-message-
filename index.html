@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🎀 مفاجأة العيد 🎀</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background: linear-gradient(180deg,#ffd6f6,#ffeefe,#f7d8ff);
+overflow:hidden;
+height:100vh;
+color:#fff;
+}
+
+/* خلفية */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+z-index:-1;
+}
+
+/* العناصر الطايرة */
+.float{
+position:absolute;
+animation: floatUp linear infinite;
+opacity:.9;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(100vh) scale(.6) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-20vh) scale(1.2) rotate(360deg);
+opacity:0;
+}
+}
+
+/* الصفحات */
+.screen{
+display:none;
+height:100vh;
+padding:30px 20px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+animation:fade .7s;
+}
+
+.active{
+display:flex;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* العنوان */
+.title{
+font-size:34px;
+margin-bottom:10px;
+text-shadow:0 0 15px rgba(255,255,255,.6);
+}
+
+/* النص */
+.desc{
+font-size:16px;
+line-height:1.9;
+max-width:330px;
+}
+
+/* الكارد */
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:30px;
+width:100%;
+max-width:360px;
+box-shadow:0 0 25px rgba(255,255,255,.3);
+border:2px solid rgba(255,255,255,.2);
+}
+
+/* الأزرار */
+.btn{
+margin-top:18px;
+border:none;
+padding:14px 22px;
+border-radius:999px;
+background:#ff73c5;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 15px rgba(255,105,180,.5);
+}
+
+.btn:hover{
+transform:scale(1.08);
+background:#ff4db8;
+}
+
+/* الخيارات */
+.option{
+width:100%;
+margin-top:12px;
+padding:14px;
+border-radius:20px;
+border:none;
+background:rgba(255,255,255,.18);
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:.25s;
+}
+
+.option:hover{
+transform:scale(1.04);
+background:rgba(255,255,255,.3);
+}
+
+/* الشخصيات */
+.character{
+font-size:48px;
+margin-bottom:10px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+/* رسالة النهاية */
+.final-box{
+background:rgba(255,255,255,.18);
+padding:28px;
+border-radius:35px;
+width:100%;
+max-width:370px;
+backdrop-filter:blur(12px);
+box-shadow:0 0 30px rgba(255,255,255,.4);
+border:2px solid rgba(255,255,255,.25);
+}
+
+#message{
+line-height:2;
+font-size:16px;
+white-space:pre-line;
+}
+
+/* glow */
+.glow{
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #fff;
+}
+to{
+text-shadow:0 0 25px #ff7edb;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- الخلفية -->
+<div class="bg" id="bg"></div>
+
+<!-- البداية -->
+<section class="screen active" id="start">
+
+<div class="card">
+
+<div class="character">🎀🧸🌸</div>
+
+<h1 class="title glow">
+مفاجأة عيد صغيرة
+</h1>
+
+<p class="desc">
+قبل ما يخلص العيد...
+في شيء بسيط جدًا
+بس طالع من القلب 🤍
+</p>
+
+<button class="btn" onclick="nextScreen('q1')">
+🎁 افتحي المفاجأة
+</button>
+
+</div>
+
+</section>
+
+<!-- سؤال 1 -->
+<section class="screen" id="q1">
+
+<div class="card">
+
+<div class="character">🎀 Hello Kitty 🎀</div>
+
+<h2 class="title">
+لو العيد كان شعور؟
+</h2>
+
+<button class="option" onclick="nextScreen('q2')">
+🌸 راحة وهدوء
+</button>
+
+<button class="option" onclick="nextScreen('q2')">
+✨ ضحك وفرحة
+</button>
+
+<button class="option" onclick="nextScreen('q2')">
+🧸 ناس قريبة
+</button>
+
+</div>
+
+</section>
+
+<!-- سؤال 2 -->
+<section class="screen" id="q2">
+
+<div class="card">
+
+<div class="character">🩷 Kuromi 🩷</div>
+
+<h2 class="title">
+وش أكثر شي يسعدك؟
+</h2>
+
+<button class="option" onclick="nextScreen('q3')">
+💖 الاهتمام
+</button>
+
+<button class="option" onclick="nextScreen('q3')">
+🌷 الكلام الحلو
+</button>
+
+<button class="option" onclick="nextScreen('q3')">
+🦋 شخص يهتم فعلًا
+</button>
+
+</div>
+
+</section>
+
+<!-- سؤال 3 -->
+<section class="screen" id="q3">
+
+<div class="card">
+
+<div class="character">🐰 My Melody 🐰</div>
+
+<h2 class="title">
+جاهزة للمفاجأة الأخيرة؟
+</h2>
+
+<button class="btn" onclick="showFinal()">
+🎀 أكيد
+</button>
+
+</div>
+
+</section>
+
+<!-- النهاية -->
+<section class="screen" id="final">
+
+<div class="final-box">
+
+<div class="character">
+🌸💖🧸✨
+</div>
+
+<h1 class="title glow">
+عيدك أحلى 🎀
+</h1>
+
+<p id="message"></p>
+
+</div>
+
+</section>
+
+<script>
+
+/* انتقال */
+function nextScreen(id){
+
+document.querySelectorAll('.screen')
+.forEach(s=>s.classList.remove('active'));
+
+document.getElementById(id)
+.classList.add('active');
+
+}
+
+/* النهاية */
+function showFinal(){
+
+nextScreen('final');
+
+startEffects();
+
+let text=`كل عام وأنتِ ألطف شخص ممكن يدخل حياة أحد 🤍
+
+وجودك لحاله يغيّر الجو،
+ويخلي كل شيء ألطف بدون ما تحسين ✨
+
+أتمنى العيد هذا
+يدخلك فرحة تشبه قلبك الجميل 🌸
+
+وتضحكين كثير،
+وترتاحين أكثر،
+وتعيشين أيام حلوة قدّك 💖
+
+بس حبيت أقول لك…
+
+وجودك يفرق فعلًا 🎀`;
+
+typeText(text);
+
+}
+
+/* كتابة */
+let i=0;
+
+function typeText(text){
+
+if(i < text.length){
+
+document.getElementById("message")
+.innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(()=>{
+typeText(text)
+},35);
+
+}
+
+}
+
+/* مؤثرات */
+function startEffects(){
+
+const bg=document.getElementById('bg');
+
+const items=[
+'💖','🌸','🦋','✨','🎀','🌷','🧸','🐰'
+];
+
+setInterval(()=>{
+
+let el=document.createElement('div');
+
+el.className='float';
+
+el.innerHTML=
+items[Math.floor(Math.random()*items.length)];
+
+el.style.left=Math.random()*100+'vw';
+
+el.style.fontSize=
+(18 + Math.random()*28)+'px';
+
+el.style.animationDuration=
+(4 + Math.random()*4)+'s';
+
+bg.appendChild(el);
+
+setTimeout(()=>{
+el.remove();
+},8000);
+
+},180);
+
+}
+
+/* مؤثرات البداية */
+startEffects();
+
+</script>
+
+</body>
+  </html>
